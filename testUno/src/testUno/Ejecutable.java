@@ -6,20 +6,25 @@ import processing.core.PApplet;
 import processing.serial.*;
 //la retroalimentacion visual influye en la manera de servirse?
 public class Ejecutable extends PApplet {
-	Serial puerto;
-	int pesas[];
-	int lineFeed = 4;
-
+	private Serial puerto;
+	private int pesas[];
+	private int lineFeed = 4;
+	private Food arroz, ensalada, carne;
+	
 	public void setup() {
 		size(800, 600);
 		pesas = new int[lineFeed];
 		String nombrePuerto = Serial.list()[1];
 		puerto = new Serial(this, nombrePuerto, 9600);
+		arroz = new Food("arroz");
+		ensalada = new Food("ensalada");
+		carne = new Food("carne");
 	}
 
 	public void draw() {
 		background(255);
-		bolita(200, 200);
+		//bolita(200, 200);
+		alimentos();
 		if (puerto.available() > 0) {
 			String mensaje = puerto.readStringUntil('\n');
 			if (mensaje != null) {
@@ -32,7 +37,9 @@ public class Ejecutable extends PApplet {
 			}
 		}
 	}
-
+	private void alimentos(){
+		arroz.Ejecutar(pesas[0]);
+	}
 	private void bolita(int x, int y) {
 		fill(0);
 		ellipseMode(CENTER);
