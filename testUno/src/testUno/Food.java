@@ -12,13 +12,13 @@ public class Food {
 		peso = gramos;
 		switch (comida) {
 		case "arroz":
-			System.out.println(comida + peso);
+			//System.out.println(comida +": " + peso);
 			break;
 		case "ensalada":
-			System.out.println(comida + peso);
+			//System.out.println(comida + peso);
 			break;
 		case "carne":
-			System.out.println(comida + peso);
+			//System.out.println(comida + peso);
 			break;
 		}
 	}

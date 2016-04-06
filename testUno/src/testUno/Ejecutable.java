@@ -46,6 +46,13 @@ public class Ejecutable extends PApplet {
 		ellipse(x, y, pesas[0]/2, pesas[0]/2);
 		ellipse(x+200, y, pesas[1]/2, pesas[1]/2);
 	}
+	public void mousePressed(){
+		/*puerto.clear();
+		puerto.stop();
+		String nombrePuerto = Serial.list()[1];
+		puerto = new Serial(this, nombrePuerto, 9600);	
+		*/	
+	}
 	static public void main(String[] passedArgs) {
 		String[] appletArgs = new String[] { "Ejecutable" };
 		if (passedArgs != null) {
